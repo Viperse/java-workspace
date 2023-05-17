@@ -7,7 +7,7 @@ public class CastingPractice {
 	public static void main(String[] args) {
 		
 		CastingPractice c = new CastingPractice();
-//		c.method1();
+		c.method1();
 //		c.method2();
 
 	}
@@ -21,8 +21,8 @@ public class CastingPractice {
 		int j = (int)i;
 		int k = (int)i+1;
 		
-		System.out.printf("unicode : %d\n", j);
-		System.out.printf("unicode : %d\n", k);
+		System.out.printf("%s unicode : %d\n",i, j);
+		System.out.printf("%s unicode : %d\n",(char)k, k);
 		
 	}
 	
