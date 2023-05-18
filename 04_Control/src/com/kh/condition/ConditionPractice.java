@@ -9,16 +9,16 @@ public class ConditionPractice {
 	public static void main(String[] args) {
 		
 		 ConditionPractice c = new  ConditionPractice();
-//		 c.practice1(); -
-//		 c.practice2(); -
-//		 c.practice3(); -
-		 c.practice4();
-//		 c.practice5(); -
-//		 c.practice6(); -
-//		 c.practice7();
-//		 c.practice8(); -
-//		 c.practice9(); -
-//		 c.practice10();-
+//		 c.practice1();
+//		 c.practice2();
+//		 c.practice3(); 
+//		 c.practice4(); 
+//		 c.practice5(); 
+//		 c.practice6(); 
+//		 c.practice7(); 
+//		 c.practice8(); 
+//		 c.practice9(); 
+//		 c.practice10();
 //		 c.practice11();
 		 
 	}
@@ -129,8 +129,23 @@ public class ConditionPractice {
     	System.out.print("영어 점수 : ");
     	int en = sc.nextInt();
     	
+    	int sum = kor + math + en;
     	
-  
+    	if (kor < 40 || math < 40 || en < 40) 
+    		System.out.println("불합격입니다.");
+    	else {   		
+    		if ((sum / 3) >= 60) {
+    			System.out.println("국어 : " + kor);
+        		System.out.println("수학 : " + math);
+        		System.out.println("영어 : " + en);
+    			System.out.printf("합계 : %d\n", sum);
+    			System.out.printf("평균 : %.2f\n", (double)(sum / 3));
+    			System.out.println("축하합니다, 합격입니다!");
+    		}
+    		
+    		else System.out.println("불합격입니다.");
+    	}
+
     }
 
     /*
@@ -196,14 +211,23 @@ public class ConditionPractice {
     	
     	System.out.print("아이디 : ");
     	String id = sc.nextLine();
+    	
+    	System.out.print("비밀번호 : ");
+    	int pas = sc.nextInt();
     	   	  	
     	String fid = "happy";
-    	int pas = 1234;
+    	int fpas = 1234;
     	
-    	if (fid.equals(id));
+    	if (fid.equals(id)) {
+    		if (pas == fpas)
+    			System.out.println("로그인 성공!");
+    		else
+    			System.out.println("비밀번호가 틀렸습니다.");
+    		}
+    	else 
+    		System.out.println("아이디가 틀렸습니다.");
     	
- 
-    }
+    	}
 
     /*
         키, 몸무게를 double로 입력 받고 BMI지수를 계산하여 계산 결과에 따라
@@ -371,6 +395,40 @@ public class ConditionPractice {
 
      */
     public void practice11() {
+    	
+    	System.out.print("중간 고사 점수 : ");
+    	int mScore = sc.nextInt();
+    	
+		System.out.print("기말 고사 점수 : ");
+		int lScore = sc.nextInt();
+		
+		System.out.print("과제 점수 : ");
+		int hw = sc.nextInt();
+		
+		System.out.print("출석 회수 : ");
+		int at = sc.nextInt();
+		
+		double i = mScore * 0.2;
+		double j = lScore * 0.3;
+		double k = hw * 0.3;
+		
+		System.out.println("=========결과==========");
+		
+		if (i + j + k + at >= 70 && at >= 14) {
+			System.out.println("중간 고사 점수(20) : " + i);
+			System.out.println("기말 고사 점수(30) : " + j);
+			System.out.println("과제 점수(30) : " + k);
+			System.out.println("출석 회수(20) : " + at);
+			System.out.println("총점 : " + (i + j + k + at));
+			System.out.println("PASS");
+		}
+		else if (at < 14) {
+			System.out.printf("FAIL [출석 회수 부족] (%d/20)\n", at);
+			if (i + j + k + at < 70)
+				System.out.printf("FAIL [점수 미달] (총점 %.2f)", i + j + k + at);
+		} else
+			System.out.printf("FAIL [점수 미달] (총점 %.2f)", i + j + k + at);
+
         
     }
     

@@ -88,21 +88,15 @@ public class OperatorPractice {
 	}
 	
 	public void method6() {
-		
-		int result = 0;
-		int cnt = 0;
-		
+			
 		Scanner sc = new Scanner(System.in);
 		System.out.print("사과의 개수 : ");
 		int apple = sc.nextInt();
 		
 		System.out.print("바구니의 크기 : ");
 		int bag = sc.nextInt();
-		
-		result = apple / bag;
-		cnt = (apple % bag) == 0 ? result : result + 1;
-		
-		System.out.printf("필요한 바구니의 수 : %d ", cnt);
+			
+		System.out.printf("필요한 바구니의 수 : %d ", (apple % bag) == 0 ? (apple / bag) : (apple / bag) + 1);
 	}
 }
 
