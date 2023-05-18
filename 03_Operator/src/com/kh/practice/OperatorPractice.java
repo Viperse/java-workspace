@@ -11,7 +11,7 @@ public class OperatorPractice {
 //		o.method3();
 //		o.method4();
 //		o.method5();
-//		o.method6();
+		o.method6();
 		
 		
 	}
@@ -57,7 +57,7 @@ public class OperatorPractice {
 		System.out.print("입력3 : ");
 		int k = sc.nextInt();
 
-		result = (i == j) && (i == k) && (j == k);
+		result = (i == j) && (i == k);
 		System.out.print(result);
 		
 	}
@@ -89,6 +89,9 @@ public class OperatorPractice {
 	
 	public void method6() {
 		
+		int result = 0;
+		int cnt = 0;
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("사과의 개수 : ");
 		int apple = sc.nextInt();
@@ -96,7 +99,11 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		int bag = sc.nextInt();
 		
-		System.out.printf("필요한 바구니의 수 : %d ", ((apple / bag) + 1));
+		result = apple / bag;
+		cnt = (apple % bag) == 0 ? result : result + 1;
+		
+		System.out.printf("필요한 바구니의 수 : %d ", cnt);
 	}
-
 }
+
+
