@@ -11,9 +11,9 @@ public class ConditionPractice {
 		 ConditionPractice c = new  ConditionPractice();
 //		 c.practice1(); -
 //		 c.practice2(); -
-//		 c.practice3();
-//		 c.practice4();
-		 c.practice5();
+//		 c.practice3(); -
+		 c.practice4();
+//		 c.practice5(); -
 //		 c.practice6(); -
 //		 c.practice7();
 //		 c.practice8(); -
@@ -86,8 +86,14 @@ public class ConditionPractice {
     	System.out.print("피자 먹는 사람 수 : ");
     	int human = sc.nextInt();
     	
+    	int result = human / slice;
     	
-        
+    	if (human % slice == 0) {
+    		System.out.println(result);
+    	} else {
+    		System.out.println(result + 1);    			
+    	}
+       
     }
 
     /*
@@ -143,9 +149,10 @@ public class ConditionPractice {
     	double th = price - (price * 0.1);
     	double fif = price - (price * 0.2);
     	
-    	if (price > 100000) System.out.println((int)ten);
-    	else if (price > 300000) System.out.println((int)th);
-    	else if (price > 50000) System.out.println((int)fif);
+    	if (price >= 500000) System.out.println((int)fif);
+    	else if (price >= 300000) System.out.println((int)th);
+    	else if (price >= 100000) System.out.println((int)ten);
+    	else System.out.println(price);
 
     }
 
