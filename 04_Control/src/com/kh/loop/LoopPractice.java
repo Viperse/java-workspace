@@ -29,6 +29,21 @@ class LoopPractice {
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
     	
+    	int sum = 0;
+    	
+    	for(int i=1; ;i++) {
+    		if (i % 2 == 0) {
+    			sum -= i;
+    		} else
+    			sum += i;
+    		
+    		if (sum >= 100) {
+    			System.out.println(i);
+    			System.out.println("sum : " + sum);
+    			break;
+    		}
+
+    	} 
 
     }
 
@@ -49,7 +64,15 @@ class LoopPractice {
     	String s = sc.nextLine();
     	char ch = s.charAt(0);
     	
+    	int count = 0;
     	
+    	for(int i=0; i<str.length(); i++) {
+    		if (ch == str.charAt(i)) {
+    		++count;
+    		}
+    	}
+    	
+    	System.out.println(str + " 안에 포함된 " + ch + " 의 개수 : " + count);
 
     }
 
@@ -89,14 +112,47 @@ class LoopPractice {
      */
     public void method5() {
     	
-    	double random = (Math.random() * 5) + 1;
-    	int ran = (int)random;
-    	int result = 0;
     	
-    	for (int i=1; i<10; i++) {
+    	int one = 0;
+    	int two = 0;
+    	int thr = 0;
+    	int fot = 0;
+    	int fif = 0;
+    	int six = 0;
+    	
+    	for (int i=1; i<=10; i++) {
     		
+    		double random = (Math.random() * 6) + 1;
+        	int ran = (int)random;
+    		
+    		switch (ran){
+    		case 1:
+    			++one;
+    			break;
+    		case 2:
+    			++two;
+    			break;
+    		case 3:
+    			++thr;
+    			break;
+    		case 4:
+    			++fot;
+    			break;
+    		case 5:
+    			++fif;
+    			break;
+    		case 6:
+    			++six;   	
+    			break;
+    		}
     	}
     	
+    	System.out.println("1 : " + one);
+    	System.out.println("2 : " + two);
+    	System.out.println("3 : " + thr);
+    	System.out.println("4 : " + fot);
+    	System.out.println("5 : " + fif);
+    	System.out.println("6 : " + six);
     
     }
 
@@ -124,43 +180,84 @@ class LoopPractice {
     */
     public void method6() {
     	
-    	double random = Math.random() * 3 + 1;
-    	int ran = (int)random;
-    	String str = "";
-    	
-    	if (ran == 1) {
-    		str = "가위";
-    	}
-    	else if (ran == 2) {
-    		str = "바위";
-    	}
-    	else
-    		str = "보";
-    	
-    	
+    	int win = 0;
+    	int lose = 0;
+    	int com = 0;
+   	    	
     	System.out.print("당신의 이름을 입력해 주세요 : ");
     	String name = sc.nextLine();
     	
-    	System.out.print("가위바위보 : ");
-    	String pl = sc.nextLine();
     	
     	for (int i=0; ;i++) {
-    		if ("가위".equals(pl)) {
-    			
+    		
+        	System.out.print("가위바위보 : ");
+        	String pl = sc.nextLine();
+        	
+        	int game = 0;
+        	
+        	switch(pl) {
+        	
+        	case "가위" :
+        		game = 0;
+        		break;
+        	case "바위" :
+        		game = 1;
+        		break;
+        	case "보" :
+        		game = 2;
+        		break;
+        	}
+    		
+        	double random = Math.random() * 3;
+        	int ran = (int)random;
+        	String str = "";
+        	
+        	switch(ran) {
+        	
+        	case 0:
+        		str = "가위";
+        		break;
+        	case 1:
+        		str = "바위";
+        		break;
+        	case 2:
+        		str = "보";
+        		break;
+        	}
+        	
+    		System.out.printf("컴퓨터 : %s\n", str);
+    		
+    		if (ran == game) {
+    			System.out.printf("%s : %s\n", name, pl);
+    			System.out.println("비겼습니다.");
+    			++com;
     		}
-    	}
+    		else if (ran == (game + 1) || (ran == 0 && game == 2)) {
+    			System.out.printf("%s : %s\n", name, pl);
+    			System.out.println("졌습니다. ㅠㅠ");
+    			++lose;
+    		}
+    		else if ((ran == 2 && game == 0) || (ran == game - 1)) {
+    			System.out.printf("%s : %s\n", name, pl);
+    			System.out.println("이겼습니다!");
+    			++win;
+    			System.out.printf("당신은 %d번 이기고, %d번 지고, %d번 비겼습니다. ",win, lose ,com);
+    			break;
+    		}   		
+    		   		
+    	}    	
 
     }
     
     public static void main(String[] args) {
     	
     	LoopPractice l = new LoopPractice();
-//    	l.method1(); -
-//    	l.method2();
-//    	l.method3();
-//    	l.method4(); -
-//    	l.method5();
-//    	l.method6();
+//    	l.method1();
+//    	l.method2(); 
+//    	l.method3(); 
+//    	l.method4(); 
+//    	l.method5(); 
+    	l.method6();
     }
 
 }

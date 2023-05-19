@@ -19,7 +19,7 @@ public class ConditionPractice {
 //		 c.practice8(); 
 //		 c.practice9(); 
 //		 c.practice10();
-//		 c.practice11();
+		 c.practice11();
 		 
 	}
 
@@ -130,23 +130,20 @@ public class ConditionPractice {
     	int en = sc.nextInt();
     	
     	int sum = kor + math + en;
+    	  		
+    	if ((sum / 3) >= 60 && kor >= 40 && math >= 40 && en >= 40) {
+    		System.out.println("국어 : " + kor);
+        	System.out.println("수학 : " + math);
+        	System.out.println("영어 : " + en);
+    		System.out.printf("합계 : %d\n", sum);
+    		System.out.printf("평균 : %.2f\n", (double)(sum / 3));
+    		System.out.println("축하합니다, 합격입니다!");
+    	} 
     	
-    	if (kor < 40 || math < 40 || en < 40) 
-    		System.out.println("불합격입니다.");
-    	else {   		
-    		if ((sum / 3) >= 60) {
-    			System.out.println("국어 : " + kor);
-        		System.out.println("수학 : " + math);
-        		System.out.println("영어 : " + en);
-    			System.out.printf("합계 : %d\n", sum);
-    			System.out.printf("평균 : %.2f\n", (double)(sum / 3));
-    			System.out.println("축하합니다, 합격입니다!");
-    		}
-    		
-    		else System.out.println("불합격입니다.");
-    	}
-
+    	else System.out.println("불합격입니다.");
+    	
     }
+
 
     /*
         B 옷가게는 10만 원 이상 사면 5%, 30만 원 이상 사면 10%, 50만원 이상 사면 20%를 할인해준다.
@@ -414,22 +411,23 @@ public class ConditionPractice {
 		
 		System.out.println("=========결과==========");
 		
+		if (at < 14) {
+			System.out.printf("FAIL [출석 회수 부족] (%d/20)\n", at);
+		
 		if (i + j + k + at >= 70 && at >= 14) {
 			System.out.println("중간 고사 점수(20) : " + i);
 			System.out.println("기말 고사 점수(30) : " + j);
 			System.out.println("과제 점수(30) : " + k);
 			System.out.println("출석 회수(20) : " + at);
 			System.out.println("총점 : " + (i + j + k + at));
-			System.out.println("PASS");
+			System.out.println("PASS");		
 		}
-		else if (at < 14) {
-			System.out.printf("FAIL [출석 회수 부족] (%d/20)\n", at);
-			if (i + j + k + at < 70)
-				System.out.printf("FAIL [점수 미달] (총점 %.2f)", i + j + k + at);
-		} else
-			System.out.printf("FAIL [점수 미달] (총점 %.2f)", i + j + k + at);
+		else if (i + j + k + at < 70)
+			System.out.printf("FAIL [점수 미달] (총점 %.2f)\n", i + j + k + at);
 
-        
-    }
+		}
+		
+       }
     
 }
+    

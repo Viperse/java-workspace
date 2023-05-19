@@ -1,3 +1,4 @@
+package com.kh.loop;
 import java.util.Scanner;
 
 public class D_While {
