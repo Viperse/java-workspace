@@ -60,19 +60,22 @@ public class ArrayPractice {
 	public void method3() {
 		
 		String[] menu = {"떡볶이", "마라탕", "케이크", "닭발", "피자", "치킨"};
-		boolean a = false;
+		int result = 0;
 		
 		System.out.print("배달 메뉴를 골라 주세요 : ");
 		String food = sc.nextLine();
 		
 		for(String i : menu) {
-			if (i.equals(food))
-				System.out.println("배달 가능");
-
+			if (i.equals(food)) {
+				result = 1;
+				break;
+			}
 		}
 		
-		if ()
-			
+		if (result == 1)
+			System.out.println("배달 가능");
+		else
+			System.out.println("배달 불가능");		
 	}
 
 	
@@ -126,11 +129,11 @@ public class ArrayPractice {
 	public static void main(String[] args) {
 		
 		ArrayPractice a = new ArrayPractice();
-//		a.method1(); -
-//		a.method2(); -
-		a.method3();
-//		a.method4(); -
-//		a.method5(); -
+//		a.method1(); 
+//		a.method2(); 
+//		a.method3();
+//		a.method4(); 
+		a.method5(); 
 		
 	}
 }
