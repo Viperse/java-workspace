@@ -108,11 +108,11 @@ public class D_While {
 		
 		double random = Math.random();
 		
-		random = Math.random() * 100;
+		random = Math.random() * 100 + 1;
 		
 		int ran = (int)random;
 		
-		for (int i=0; ;i++) {
+		for (int i=1; ;i++) {
 			System.out.print("1과 100 사이의 값 입력 > ");
 			int number = sc.nextInt();
 			
@@ -127,6 +127,77 @@ public class D_While {
 			
 		}
 	}
+	
+	/*
+	 * -----------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------
+	 * 선택 > 1
+	 * 예금액 > 5000
+	 * 
+	 * -----------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------
+	 * 선택 > 2
+	 * 출금액 > 2000
+	 * 
+	 * -----------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------
+	 * 선택 > 3
+	 * 잔고 > 3000
+	 * 
+	 * -----------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------
+	 * 선택 > 4
+	 * 프로그램 종료
+	 * 
+	 * Integer.parseInt(sc.nextLine());
+	 * - Integer 클래스의 paseInt 메소드
+	 * String -> int
+	 */
+		
+	public void method6() {
+			
+		int mon = 0;
+		boolean run = true;
+		
+		while(run) {
+			
+			
+			System.out.println("-----------------------------------");
+			System.out.println("1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료");
+			System.out.println("-----------------------------------");
+			
+			System.out.print("선택 > ");
+			int sel = Integer.parseInt(sc.nextLine());
+			
+			switch(sel) {
+			
+			case 1:
+				System.out.print("예금액 > ");
+				mon += Integer.parseInt(sc.nextLine());
+				break;
+			case 2:
+				System.out.print("출금액 > ");
+				mon -= Integer.parseInt(sc.nextLine());
+				break;
+			case 3:
+				System.out.printf("잔고 > %d\n", mon);
+				break;
+			case 4:
+				run = false;
+				break;
+				
+			}
+			
+			
+		}
+		
+		System.out.println("프로그램 종료");
+		
+	}
 		
 
 	public static void main(String[] args) {
@@ -136,7 +207,8 @@ public class D_While {
 //		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
+//		d.method5();
+//		d.method6();
 
 	}
 

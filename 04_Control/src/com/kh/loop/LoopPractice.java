@@ -86,14 +86,17 @@ class LoopPractice {
         4
         0
      */
-    public void method4() {
+    public void method4() {   	
     	
-    	double random = Math.random() * 10 + 1;
-    	
-    	int ran = (int)random;
-    	
-    	for (int i=ran; i>=0; i--) {
-    		System.out.println(i);
+    	for (int i=0;;i++) {
+    		
+    		double random = Math.random() * 11;
+        	int ran = (int)random;
+        	
+        	System.out.println(ran);
+        	
+        	if (ran == 0) 
+        		break;
     	}
     				
 
@@ -255,9 +258,9 @@ class LoopPractice {
 //    	l.method1();
 //    	l.method2(); 
 //    	l.method3(); 
-//    	l.method4(); 
+    	l.method4(); 
 //    	l.method5(); 
-    	l.method6();
+//    	l.method6();
     }
 
 }
