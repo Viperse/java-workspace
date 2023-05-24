@@ -9,20 +9,20 @@ public class Category {
 	public String Goods;
 	public String usedBook;
 	
-	public void cateAdd() { // 카테고리 메뉴 추가
-		
+	public Category cateAdd() { // 카테고리 메뉴 추가
+		return null;
 	}
 	
-	public void cateView() { // 카테고리 메뉴 보기
-		
+	public Category cateView() { // 카테고리 메뉴 보기
+		return null;
 	}
 	
-	public void cateUpdate() { // 카테고리 메뉴 수정
-		
+	public Category cateUpdate() { // 카테고리 메뉴 수정
+		return null;
 	}
 	
-	public void catedelete() { // 카테고리 메뉴 삭제
-		
+	public Category catedelete() { // 카테고리 메뉴 삭제
+		return null;
 	}
 
 }

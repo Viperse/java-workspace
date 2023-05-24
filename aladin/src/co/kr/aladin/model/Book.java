@@ -10,28 +10,28 @@ public class Book {
 	public String bookimgUrl;
 	public String preimgUrl;
 	
-	public void bookEnroll()  {// 도서 상품 등록
-		
+	public Book bookEnroll()  {// 도서 상품 등록
+		return null;
 	}
 	
-	public void bookMenu() {// 도서 목록
-		
+	public Book[] bookMenu() {// 도서 목록
+		return null;
 	}
 
-	public void bookView() {// 도서 1개 정보 보기
-		
+	public Book bookView() {// 도서 1개 정보 보기
+		return null;
 	}
 	
-	public void bookPurchase() {  // 도서 구매
-		
+	public boolean bookPurchase() {  // 도서 구매
+		return false;
 	}
 	
-	public void bookUpdate() { // 도서 정보 수정
-		
+	public Book bookUpdate() { // 도서 정보 수정
+		return null;
 	}
 	
-	public void bookDelete() { // 도서 정보 삭제 (판매 종료)
-		
+	public Book bookDelete() { // 도서 정보 삭제 (판매 종료)
+		return null;
 	}
 
 }

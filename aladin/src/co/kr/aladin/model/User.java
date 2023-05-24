@@ -15,30 +15,24 @@ public class User {
 	public String number;
 	
 	
-	public void login() { // 로그인
-		
-		System.out.print("아이디 : ");
-		
-		
-		
+	public boolean login() { // 로그인
+		return false;
 	}
 	
-	public void signUp(String newId, String newPassword) { // 회원가입
-		
-		id = newId;
-		password = newPassword;
+	public boolean signUp() { // 회원가입
+		return false;
 	}
 	
-	public void viewUserInfo() { // 회원 정보 보기
-		
+	public User viewUserInfo() { // 회원 정보 보기
+		return null;
 	}
 	
-	public void updateUserInfo() { // 회원 정보 수정
-		
+	public User updateUserInfo() { // 회원 정보 수정
+		return null;
 	}
 	
-	public void deleteUserInfo() { // 프로필 삭제
-		
+	public boolean deleteUserInfo() { // 프로필 삭제
+		return false;
 	}
 
 }
