@@ -2,36 +2,88 @@ package co.kr.aladin.model;
 
 public class Book {
 	
-	public String title;
-	public String author;
-	public String comment;
-	public int oriPrice;
-	public int salePrice;
-	public String bookimgUrl;
-	public String preimgUrl;
+	private String title;
+	private String author;
+	private String comment;
+	private int oriPrice;
+	private int salePrice;
+	private String bookimgUrl;
+	private String preimgUrl;
 	
-	public Book bookEnroll()  {// 도서 상품 등록
-		return null;
-	}
-	
-	public Book[] bookMenu() {// 도서 목록
-		return null;
+	public Book() {}
+
+	public Book(String title, String author, String comment, int oriPrice, int salePrice, String bookimgUrl,
+			String preimgUrl) {
+		this.title = title;
+		this.author = author;
+		this.comment = comment;
+		this.oriPrice = oriPrice;
+		this.salePrice = salePrice;
+		this.bookimgUrl = bookimgUrl;
+		this.preimgUrl = preimgUrl;
 	}
 
-	public Book bookView() {// 도서 1개 정보 보기
-		return null;
+	public String getTitle() {
+		return title;
 	}
-	
-	public boolean bookPurchase() {  // 도서 구매
-		return false;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	
-	public Book bookUpdate() { // 도서 정보 수정
-		return null;
+
+	public String getAuthor() {
+		return author;
 	}
-	
-	public Book bookDelete() { // 도서 정보 삭제 (판매 종료)
-		return null;
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public int getOriPrice() {
+		return oriPrice;
+	}
+
+	public void setOriPrice(int oriPrice) {
+		this.oriPrice = oriPrice;
+	}
+
+	public int getSalePrice() {
+		return salePrice;
+	}
+
+	public void setSalePrice(int salePrice) {
+		this.salePrice = salePrice;
+	}
+
+	public String getBookimgUrl() {
+		return bookimgUrl;
+	}
+
+	public void setBookimgUrl(String bookimgUrl) {
+		this.bookimgUrl = bookimgUrl;
+	}
+
+	public String getPreimgUrl() {
+		return preimgUrl;
+	}
+
+	public void setPreimgUrl(String preimgUrl) {
+		this.preimgUrl = preimgUrl;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", comment=" + comment + ", oriPrice=" + oriPrice
+				+ ", salePrice=" + salePrice + ", bookimgUrl=" + bookimgUrl + ", preimgUrl=" + preimgUrl + "]";
+	}
+		
 
 }

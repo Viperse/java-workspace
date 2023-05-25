@@ -4,39 +4,77 @@ import java.sql.Date;
 
 public class Video {
 	
-	public String title;
-	public String comment;
-	public Date uploadAt;
-	public int count;
-	public String imgUrl;
-	public String fileUrl;
+	private String title;
+	private String comment;
+	private Date uploadAt;
+	private int count;
+	private String imgUrl;
+	private String fileUrl;
 	
-	/*
-	 * Create : 추가
-	 * Read : 읽기(1개, 목록)
-	 * Update : 수정
-	 * Delete : 삭제
-	 */
-	
-	public Video upload() { // 영상 업로드	
-		return null;
-	}
-	
-	public Video[] videoList() { // 영상 목록
-		return null;
+	public Video() {}
+
+	public Video(String title, String comment, Date uploadAt, int count, String imgUrl, String fileUrl) {
+		this.title = title;
+		this.comment = comment;
+		this.uploadAt = uploadAt;
+		this.count = count;
+		this.imgUrl = imgUrl;
+		this.fileUrl = fileUrl;
 	}
 
-	public Video viewVideo() { // 영상 1개 보기
-		return null;
+	public String getTitle() {
+		return title;
 	}
 
-	public Video updateVideo() { // 동영상 수정
-		return null;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public boolean deleteVideo() { // 동영상 삭제
-		return false;
+	public String getComment() {
+		return comment;
 	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public Date getUploadAt() {
+		return uploadAt;
+	}
+
+	public void setUploadAt(Date uploadAt) {
+		this.uploadAt = uploadAt;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+
+	@Override
+	public String toString() {
+		return "Video [title=" + title + ", comment=" + comment + ", uploadAt=" + uploadAt + ", count=" + count
+				+ ", imgUrl=" + imgUrl + ", fileUrl=" + fileUrl + "]";
+	}
+		
 	
-
 }
