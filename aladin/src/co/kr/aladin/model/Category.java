@@ -73,5 +73,9 @@ public class Category {
 		return "Category [home=" + home + ", korBook=" + korBook + ", forBook=" + forBook + ", eBook=" + eBook
 				+ ", Goods=" + Goods + ", usedBook=" + usedBook + "]";
 	}
+	
+	public String draw() {
+		return null;
+	}
 		
 }

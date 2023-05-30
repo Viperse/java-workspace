@@ -12,6 +12,7 @@ public class User {
 	private Date birth;
 	private String number;
 	
+	Book book;
 	
 	public User() {}
 
@@ -90,6 +91,10 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", birth=" + birth
 				+ ", number=" + number + "]";
+	}
+	
+	public String draw() {
+		return null;
 	}
 			
 	

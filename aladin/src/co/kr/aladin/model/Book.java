@@ -84,6 +84,11 @@ public class Book {
 		return "Book [title=" + title + ", author=" + author + ", comment=" + comment + ", oriPrice=" + oriPrice
 				+ ", salePrice=" + salePrice + ", bookimgUrl=" + bookimgUrl + ", preimgUrl=" + preimgUrl + "]";
 	}
+	
+	
+	public String draw() {
+		return null;
+	}
 		
 
 }
