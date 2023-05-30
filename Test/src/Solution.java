@@ -1,25 +1,23 @@
-import java.util.Arrays;
-import java.util.Collections;
-
 class Solution {
 	
-    public int[] solution(int[] emergency) {
+    public String solution(int q, int r, String code) {
+    	char[] codeArr = code.toCharArray();
     	
-        int[] answer = new int[emergency.length];
-       
-        
-        int j = 0;
-        
-        int[] emergencyc = emergency.clone();
-        
-        Arrays.sort(emergencyc);
-        
-        for(int i=emergencyc.length-1; i>0; i--) {
-        	
-        }
-        
-        
-        
+    	
+    	String answer = "";
+    	
+    	for(int i=0; i<codeArr.length; i++) {
+    		if(i % q == r) {
+    			answer += codeArr[i];
+    		}
+    	}
         return answer;
+    }
+    
+    public static void main(String[] args) {
+    	
+    	Solution s = new Solution();
+    	System.out.println(s.solution(3, 1, "qjnwezgrpirldywt"));
+    	System.out.println(s.solution(1, 0, "programmers"));
     }
 }
