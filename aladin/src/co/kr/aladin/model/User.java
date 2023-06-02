@@ -1,7 +1,6 @@
 package co.kr.aladin.model;
 
 import java.sql.Date;
-import java.util.Scanner;
 
 public class User {
 	
@@ -11,11 +10,11 @@ public class User {
 	private String name;
 	private Date birth;
 	private String number;
+	private Book book;
 	
-	Book book;
 	
 	public User() {}
-
+	
 
 	public User(String id, String email, String password, String name, Date birth, String number) {
 		this.id = id;
@@ -25,7 +24,7 @@ public class User {
 		this.birth = birth;
 		this.number = number;
 	}
-
+	
 
 	public String getId() {
 		return id;
@@ -86,13 +85,23 @@ public class User {
 		this.number = number;
 	}
 
+	public Book getBook() {
+		return book;
+	}
+
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+	
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", birth=" + birth
-				+ ", number=" + number + "]";
+				+ ", number=" + number + ", book=" + book + "]";
 	}
-	
+
+
 	public String draw() {
 		return null;
 	}

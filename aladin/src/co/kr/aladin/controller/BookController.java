@@ -4,30 +4,40 @@ import co.kr.aladin.model.Book;
 
 public class BookController {
 	
-	Book book = new Book();
+	UserController uc = null;
+	Book[] bookList = new Book[10];
+	Book[] bookcart = new Book[3];
+	int index = 0;
+	int index2 = 0;
 	
-	public Book bookEnroll()  {// 도서 상품 등록
-		return this.book;
+	public void bookEnroll(Book book)  {// 도서 상품 등록
+		bookList[index++] = book;
 	}
 	
 	public Book[] bookMenu() {// 도서 목록
-		return null;
+		return bookList;
 	}
 
-	public Book bookView() {// 도서 1개 정보 보기
-		return this.book;
+	public Book bookView(int index) { // 도서 1개 정보 보기
+		return bookList[index];
 	}
 	
+	public Book[] bookListInput(int index) { // 장바구니 넣기
+		bookList[index] = bookcart[index2];
+		index2++;
+		
+		return bookcart;
+	}
 	public boolean bookPurchase() {  // 도서 구매
 		return false;
 	}
 	
-	public Book bookUpdate() { // 도서 정보 수정
-		return this.book;
+	public void bookUpdate(int index, Book book) { // 도서 정보 수정
+		bookList[index] = book;
 	}
 	
-	public Book bookDelete() { // 도서 정보 삭제 (판매 종료)
-		return this.book;
+	public boolean bookDelete() { // 도서 정보 삭제 (판매 종료)
+		return false;
 	}
 
 }

@@ -1,7 +1,6 @@
 package co.kr.aladin;
 
 import co.kr.aladin.model.Book;
-import co.kr.aladin.model.Category;
 import co.kr.aladin.model.User;
 
 public class Application {
@@ -9,9 +8,7 @@ public class Application {
 	public static void main(String[] args) {
 		
 		User u = new User();
-		Book b = new Book();
-		Category c = new Category();
-		
+		Book b = new Book();		
 		
 
 	}
