@@ -33,6 +33,7 @@ public class UserController {
 	public void deleteProfile(String id) { // 계정 삭제
 		if(user.getId().equals(id)) {
 			user = null;
+			
 		}
 	}
 
