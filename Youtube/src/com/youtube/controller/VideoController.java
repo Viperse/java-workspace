@@ -11,20 +11,24 @@ public class VideoController {
 	 * Delete : 삭제
 	 */
 	
-	public Video upload() { // 영상 업로드	
-		return null;
+	Video[] videoList = new Video[5];
+	int index = 0;
+	public void upload(Video video) { // 영상 업로드	
+		
+		videoList[index++] = video;		
 	}
 	
 	public Video[] videoList() { // 영상 목록
-		return null;
+		return videoList;
 	}
 
-	public Video viewVideo() { // 영상 1개 보기
-		return null;
+	public Video viewVideo(int index) { // 영상 1개 보기
+		return videoList[index];
 	}
 
-	public Video updateVideo() { // 동영상 수정
-		return null;
+	public void updateVideo(int index, Video video) { // 동영상 수정
+		
+		videoList[index] = video;
 	}
 
 	public boolean deleteVideo() { // 동영상 삭제
