@@ -6,7 +6,8 @@ import co.kr.aladin.model.User;
 public class UserController {
 	
 	User user = null;
-	private Book[] bookList = new Book[3];
+	BookController bc = null;
+
 	
 	public boolean login(String id, String password) { // 로그인
 		if(user != null & user.getId().equals(id) && user.getPassword().equals(password))
@@ -40,7 +41,7 @@ public class UserController {
 	
 	public Book[] bookListView() { // 장바구니 보기
 		if(this.login(user.getId(), user.getPassword())) {
-			return bookList;
+			return bc.bookcart;
 		}
 		return null;
 	}
