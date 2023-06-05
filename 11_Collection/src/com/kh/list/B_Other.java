@@ -1,5 +1,7 @@
 package com.kh.list;
 
+import java.util.Vector;
+
 public class B_Other {
 	
 	public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class B_Other {
 	
 	// Vector
 	public void method1() {
+		Vector v = new Vector();
 		
 	}
 
