@@ -128,7 +128,8 @@ public class Application {
 		System.out.print("곡 명 : ");
 		String title = sc.nextLine();
 		if(null != mc.removeMusic(title)) {
-			System.out.println(mc.searchMusic(title) + "을 삭제했습니다.");
+			mc.searchMusic(title);
+			System.out.println(title + "을(를) 삭제했습니다.");
 		} else System.out.println("삭제할 곡이 없습니다.");
 	}
 	

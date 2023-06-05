@@ -52,9 +52,9 @@ public class MusicController {
 	}
 	
 	public Music setMusic(String title, Music music) {
-		for(int i=0; i<list.size(); i++) {
-			if(list.get(i).getTitle().equals(title)) {
-				return list.set(i, music);
+		for(Music m : list) {
+			if(m.getTitle().equals(title)) {
+				return list.set(list.indexOf(m), music);
 			}
 		}
 		
