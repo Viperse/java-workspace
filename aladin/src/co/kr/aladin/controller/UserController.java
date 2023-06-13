@@ -1,7 +1,9 @@
 package co.kr.aladin.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import co.kr.aladin.model.Book;
 import co.kr.aladin.model.User;
@@ -9,48 +11,54 @@ import co.kr.aladin.model.User;
 public class UserController {
 	
 	User user = null;
-	BookController bc = null;
-	List<Book> bookcart = new ArrayList<>();
-
+	Map<String, User> userMap = new HashMap<>();
 	
-	public boolean login(String id, String password) { // 로그인
-		if(user != null & user.getId().equals(id) && user.getPassword().equals(password))
+	public boolean signUp(String id, User user) { // 회원가입
+		if(!userMap.containsKey(id)) {
+			userMap.put(id, user);
 			return true;
+		}
 		return false;
 	}
 	
-	public void signUp(User user) { // 회원가입
-		this.user = user;
+	public boolean login(String id, String password) { // 로그인
+		if(userMap.containsKey(id)) {
+			if(userMap.get(id).getPassword().equals(password)) {
+				return true;
+			}
+		} 
+		return false;
 	}
 	
-	public User viewUserInfo() { // 회원 정보 보기
-		if(this.login(user.getId(), user.getPassword())) {
-			return user;
+	
+	public User viewUserInfo(String id) { // 회원 정보 보기
+		if(userMap.containsKey(id)) {
+			return userMap.get(id);
 		}
 		return null;
 	}
 	
-	// 장바구니 보기
-	public 
-	
-	// 캐시 충전하기
-	
-	public User updateUserInfo() { // 회원 정보 수정
-		if(this.login(user.getId(), user.getPassword())) { 
-			this.user = user;
-		}
-		return this.user;
+	public void cashCharge() { // 캐시 충전하기
+		
 	}
 	
-	public void deleteUserInfo(String id) { // 프로필 삭제
-		if(user.getId().equals(id)) {
-			user = null;
+	public User updateUserInfo(String id, User user) { // 회원 정보 수정
+		
+		if(userMap.containsKey(id)) {
+			return userMap.put(id, user);
+		}
+		return null;
+	}
+	
+	public void deleteUserInfo(String id) { // 회원 정보 삭제
+		if(userMap.containsKey(id)) {
+			userMap.remove(id);
 		}
 	}
 	
-	public Book[] bookListView() { // 장바구니 보기
-		if(this.login(user.getId(), user.getPassword())) {
-			return bc.bookcart;
+	public List<Book> bookListView(String id) { // 장바구니 보기
+		if(userMap.containsKey(id)) {
+			return userMap.get(id).getBookcart();
 		}
 		return null;
 	}

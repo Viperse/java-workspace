@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import co.kr.aladin.model.Book;
+import co.kr.aladin.model.User;
 
 public class BookController {
 	
@@ -24,8 +25,8 @@ public class BookController {
 		return bookList.get(index);
 	}
 	
-	// 도서 검색
-	public Book bookSearch(String keyword) {
+	
+	public Book bookSearch(String keyword) { // 도서 이름 검색
 		
 		for(int i=0; i<bookList.size(); i++) {
 			if(bookList.get(i).getTitle().contains(keyword)) {
@@ -35,13 +36,27 @@ public class BookController {
 		return null;
 	}
 	
-	public void bookCartInput(int index) { // 장바구니 넣기
-				
-		bookList.get(index);
+	public Book bookGenreView(String genre) { // 도서 종류 검색
+		for(int i=0; i<bookList.size(); i++) {
+			if(bookList.get(i).getGenre().equals(genre)) {
+				return bookList.get(i);
+			}
+		}
+		return null;
 	}
+	
+	// 추천 순서로 보기
+	public void bookRecommend() {
+		
+	}
+	
+	public void bookCartInput(String id, int index) { // 장바구니 넣기	
+		
+		uc.userMap.get(id).getBookcart().add(bookList.get(index));
+	}
+	
 	public boolean bookPurchase() {  // 도서 구매
 		
-		uc
 		
 		return false;
 	}

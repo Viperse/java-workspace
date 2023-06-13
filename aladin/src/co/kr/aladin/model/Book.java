@@ -1,5 +1,6 @@
 package co.kr.aladin.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Book {
@@ -13,12 +14,13 @@ public class Book {
 	private int salePrice;
 	private String bookimgUrl;
 	private String preimgUrl;
-	private Review review;
+	private List<Review> review;
 	
 	public Book() {}
 
 	public Book(String title, String bookcode, String genre, String author, String comment, int oriPrice, int salePrice,
-			String bookimgUrl, String preimgUrl, Review review) {
+			String bookimgUrl, String preimgUrl, List<Review> review) {
+		super();
 		this.title = title;
 		this.bookcode = bookcode;
 		this.genre = genre;
@@ -103,14 +105,20 @@ public class Book {
 		this.preimgUrl = preimgUrl;
 	}
 
-	public Review getReview() {
+	public List<Review> getReview() {
 		return review;
 	}
 
-	public void setReview(Review review) {
+	public void setReview(List<Review> review) {
 		this.review = review;
 	}
-		
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", bookcode=" + bookcode + ", genre=" + genre + ", author=" + author
+				+ ", comment=" + comment + ", oriPrice=" + oriPrice + ", salePrice=" + salePrice + ", bookimgUrl="
+				+ bookimgUrl + ", preimgUrl=" + preimgUrl + ", review=" + review + "]";
+	}
 
 	@Override
 	public int hashCode() {
@@ -133,13 +141,5 @@ public class Book {
 				&& Objects.equals(preimgUrl, other.preimgUrl) && Objects.equals(review, other.review)
 				&& salePrice == other.salePrice && Objects.equals(title, other.title);
 	}
-
-	@Override
-	public String toString() {
-		return "Book [title=" + title + ", bookcode=" + bookcode + ", genre=" + genre + ", author=" + author
-				+ ", comment=" + comment + ", oriPrice=" + oriPrice + ", salePrice=" + salePrice + ", bookimgUrl="
-				+ bookimgUrl + ", preimgUrl=" + preimgUrl + ", review=" + review + "]";
-	}
-	
 	
 }

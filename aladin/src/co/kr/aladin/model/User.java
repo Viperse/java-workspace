@@ -1,42 +1,32 @@
 package co.kr.aladin.model;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
 	
-	private String id;
 	private String email;
 	private String password;
 	private String name;
 	private Date birth;
 	private String number;
 	private int cash;
-	private Book book;
+	private List<Book> bookcart;
 	
 	
 	public User() {}
 
 
-	public User(String id, String email, String password, String name, Date birth, String number, int cash, Book book) {
-		this.id = id;
+	public User(String email, String password, String name, Date birth, String number, int cash, List<Book> bookcart) {
+		super();
 		this.email = email;
 		this.password = password;
 		this.name = name;
 		this.birth = birth;
 		this.number = number;
 		this.cash = cash;
-		this.book = book;
-	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
+		this.bookcart = bookcart;
 	}
 
 
@@ -100,19 +90,26 @@ public class User {
 	}
 
 
-	public Book getBook() {
-		return book;
+	public List<Book> getBookcart() {
+		return bookcart;
 	}
 
 
-	public void setBook(Book book) {
-		this.book = book;
+	public void setBookcart(List<Book> bookcart) {
+		this.bookcart = bookcart;
+	}
+
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", password=" + password + ", name=" + name + ", birth=" + birth + ", number="
+				+ number + ", cash=" + cash + ", bookcart=" + bookcart + "]";
 	}
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(birth, book, cash, email, id, name, number, password);
+		return Objects.hash(birth, bookcart, cash, email, name, number, password);
 	}
 
 
@@ -125,18 +122,9 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(birth, other.birth) && Objects.equals(book, other.book) && cash == other.cash
-				&& Objects.equals(email, other.email) && Objects.equals(id, other.id)
-				&& Objects.equals(name, other.name) && Objects.equals(number, other.number)
-				&& Objects.equals(password, other.password);
+		return Objects.equals(birth, other.birth) && Objects.equals(bookcart, other.bookcart) && cash == other.cash
+				&& Objects.equals(email, other.email) && Objects.equals(name, other.name)
+				&& Objects.equals(number, other.number) && Objects.equals(password, other.password);
 	}
 
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", birth=" + birth
-				+ ", number=" + number + ", cash=" + cash + ", book=" + book + "]";
-	}
-	
-	
 }
