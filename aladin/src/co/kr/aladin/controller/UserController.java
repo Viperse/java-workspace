@@ -1,5 +1,8 @@
 package co.kr.aladin.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import co.kr.aladin.model.Book;
 import co.kr.aladin.model.User;
 
@@ -7,6 +10,7 @@ public class UserController {
 	
 	User user = null;
 	BookController bc = null;
+	List<Book> bookcart = new ArrayList<>();
 
 	
 	public boolean login(String id, String password) { // 로그인
@@ -25,6 +29,11 @@ public class UserController {
 		}
 		return null;
 	}
+	
+	// 장바구니 보기
+	public 
+	
+	// 캐시 충전하기
 	
 	public User updateUserInfo() { // 회원 정보 수정
 		if(this.login(user.getId(), user.getPassword())) { 

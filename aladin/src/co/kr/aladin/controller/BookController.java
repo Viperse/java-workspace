@@ -1,43 +1,57 @@
 package co.kr.aladin.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import co.kr.aladin.model.Book;
 
 public class BookController {
 	
-	UserController uc = null;
-	Book[] bookList = new Book[10];
-	Book[] bookcart = new Book[3];
-	int index = 0;
-	int index2 = 0;
+	 List<Book> bookList = new ArrayList<>();
+	 UserController uc = new UserController();
 	
-	public void bookEnroll(Book book)  {// 도서 상품 등록
-		bookList[index++] = book;
+	public void bookEnroll(Book book)  { // 도서 상품 등록
+		bookList.add(book);
 	}
 	
-	public Book[] bookMenu() {// 도서 목록
+	public List<Book> bookMenu() { // 도서 목록
 		return bookList;
 	}
 
 	public Book bookView(int index) { // 도서 1개 정보 보기
-		return bookList[index];
+		return bookList.get(index);
 	}
 	
-	public Book[] bookListInput(int index) { // 장바구니 넣기
-		bookList[index] = bookcart[index2];
-		index2++;
+	// 도서 검색
+	public Book bookSearch(String keyword) {
 		
-		return bookcart;
+		for(int i=0; i<bookList.size(); i++) {
+			if(bookList.get(i).getTitle().contains(keyword)) {
+				return bookList.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public void bookCartInput(int index) { // 장바구니 넣기
+				
+		bookList.get(index);
 	}
 	public boolean bookPurchase() {  // 도서 구매
+		
+		uc
+		
 		return false;
 	}
 	
 	public void bookUpdate(int index, Book book) { // 도서 정보 수정
-		bookList[index] = book;
+		bookList.set(index, book);
 	}
 	
-	public boolean bookDelete() { // 도서 정보 삭제 (판매 종료)
-		return false;
+	public void bookDelete(int index) { // 도서 정보 삭제 (판매 종료)
+		bookList.remove(index);
 	}
 
 }

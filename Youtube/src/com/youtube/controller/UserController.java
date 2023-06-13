@@ -1,11 +1,13 @@
 package com.youtube.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.youtube.model.User;
 
 public class UserController {
 	
-	User user = null;
-	
+	User user = null;	
 	public boolean login(String id, String password) { // 로그인
 		if(user != null && user.getId().equals(id) && user.getPassword().equals(password))
 			return true;
@@ -22,6 +24,7 @@ public class UserController {
 		}
 		return null;
 	}
+	
 	
 	public User updateProfile() { // 프로필 수정
 		if(login(this.user.getId(), this.user.getPassword())) {
