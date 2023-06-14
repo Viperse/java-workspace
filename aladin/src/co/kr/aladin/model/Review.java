@@ -66,7 +66,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [id=" + id + ", title=" + title + ", recommend=" + recommend + ", comment=" + comment + ", now="
+		return "리뷰 정보 [id=" + id + ", title=" + title + ", recommend=" + recommend + ", comment=" + comment + ", now="
 				+ now + "]";
 	}
 

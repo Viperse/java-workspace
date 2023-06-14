@@ -148,7 +148,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", bookcode=" + bookcode + ", genre=" + genre + ", author=" + author
+		return "도서 정보 [title=" + title + ", bookcode=" + bookcode + ", genre=" + genre + ", author=" + author
 				+ ", comment=" + comment + ", oriPrice=" + oriPrice + ", salePrice=" + salePrice + ", bookimgUrl="
 				+ bookimgUrl + ", preimgUrl=" + preimgUrl + ", review=" + review + ", recomCount=" + recomCount + "]";
 	}

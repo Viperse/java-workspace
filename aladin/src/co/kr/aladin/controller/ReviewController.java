@@ -7,7 +7,6 @@ import co.kr.aladin.model.Review;
 
 public class ReviewController {
 	
-	List<Review> reviewList = new ArrayList<>();
 	UserController uc = new UserController();
 	BookController bc = new BookController();
 	
@@ -20,8 +19,8 @@ public class ReviewController {
 		return false;
 	}
 	// 리뷰 1개 보기
-	public void viewReview(int index1, int index2) {
-		bc.bookList.get(index1).getReview().get(index2);
+	public List<Review> viewReview(int index1, int index2) {
+		return (List<Review>) bc.bookList.get(index1).getReview().get(index2);
 	}
 	
 	// 리뷰 전체 보기
@@ -33,14 +32,16 @@ public class ReviewController {
 	}
 	
 	// 로그인한 사람과 리뷰 작성자가 같을 때 리뷰 수정하기
-	public void updateReview(String id, String password, int index1, int index2, Review review) {
+	public void updateReview(String id, int index1, int index2, Review review) {
 		if(bc.bookList.get(index1).getReview().get(index2).getId().equals(id)) {
 			bc.bookList.get(index1).getReview().set(index2, review);
 		}
 	}
 	// 로그인한 사람과 리뷰 작성자가 같을 때 리뷰 삭제하기
-	public void deleteReview() {
-		
+	public void deleteReview(String id, int index1, int index2) {
+		if(bc.bookList.get(index1).getReview().get(index2).getId().equals(id)) {
+			bc.bookList.get(index1).getReview().remove(index2);
+		}
 	}
 
 }
