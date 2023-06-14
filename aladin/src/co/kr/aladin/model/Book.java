@@ -15,11 +15,12 @@ public class Book {
 	private String bookimgUrl;
 	private String preimgUrl;
 	private List<Review> review;
+	private int recomCount;
 	
 	public Book() {}
 
 	public Book(String title, String bookcode, String genre, String author, String comment, int oriPrice, int salePrice,
-			String bookimgUrl, String preimgUrl, List<Review> review) {
+			String bookimgUrl, String preimgUrl, List<Review> review, int recomCount) {
 		super();
 		this.title = title;
 		this.bookcode = bookcode;
@@ -31,6 +32,7 @@ public class Book {
 		this.bookimgUrl = bookimgUrl;
 		this.preimgUrl = preimgUrl;
 		this.review = review;
+		this.recomCount = recomCount;
 	}
 
 	public String getTitle() {
@@ -113,17 +115,18 @@ public class Book {
 		this.review = review;
 	}
 
-	@Override
-	public String toString() {
-		return "Book [title=" + title + ", bookcode=" + bookcode + ", genre=" + genre + ", author=" + author
-				+ ", comment=" + comment + ", oriPrice=" + oriPrice + ", salePrice=" + salePrice + ", bookimgUrl="
-				+ bookimgUrl + ", preimgUrl=" + preimgUrl + ", review=" + review + "]";
+	public int getRecomCount() {
+		return recomCount;
+	}
+
+	public void setRecomCount(int recomCount) {
+		this.recomCount = recomCount;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(author, bookcode, bookimgUrl, comment, genre, oriPrice, preimgUrl, review, salePrice,
-				title);
+		return Objects.hash(author, bookcode, bookimgUrl, comment, genre, oriPrice, preimgUrl, recomCount, review,
+				salePrice, title);
 	}
 
 	@Override
@@ -138,8 +141,16 @@ public class Book {
 		return Objects.equals(author, other.author) && Objects.equals(bookcode, other.bookcode)
 				&& Objects.equals(bookimgUrl, other.bookimgUrl) && Objects.equals(comment, other.comment)
 				&& Objects.equals(genre, other.genre) && oriPrice == other.oriPrice
-				&& Objects.equals(preimgUrl, other.preimgUrl) && Objects.equals(review, other.review)
-				&& salePrice == other.salePrice && Objects.equals(title, other.title);
+				&& Objects.equals(preimgUrl, other.preimgUrl) && recomCount == other.recomCount
+				&& Objects.equals(review, other.review) && salePrice == other.salePrice
+				&& Objects.equals(title, other.title);
+	}
+
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", bookcode=" + bookcode + ", genre=" + genre + ", author=" + author
+				+ ", comment=" + comment + ", oriPrice=" + oriPrice + ", salePrice=" + salePrice + ", bookimgUrl="
+				+ bookimgUrl + ", preimgUrl=" + preimgUrl + ", review=" + review + ", recomCount=" + recomCount + "]";
 	}
 	
 }

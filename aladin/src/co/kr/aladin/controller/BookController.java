@@ -1,10 +1,12 @@
 package co.kr.aladin.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import co.kr.aladin.compare.RecommendOrder;
 import co.kr.aladin.model.Book;
 import co.kr.aladin.model.User;
 
@@ -36,7 +38,7 @@ public class BookController {
 		return null;
 	}
 	
-	public Book bookGenreView(String genre) { // 도서 종류 검색
+	public Book bookGenreView(String genre) { // 도서 장르별 검색
 		for(int i=0; i<bookList.size(); i++) {
 			if(bookList.get(i).getGenre().equals(genre)) {
 				return bookList.get(i);
@@ -46,8 +48,10 @@ public class BookController {
 	}
 	
 	// 추천 순서로 보기
-	public void bookRecommend() {
+	public List<Book> bookRecommend() {
 		
+		Collections.sort(bookList, new RecommendOrder());
+		return bookList;
 	}
 	
 	public void bookCartInput(String id, int index) { // 장바구니 넣기	
@@ -55,9 +59,11 @@ public class BookController {
 		uc.userMap.get(id).getBookcart().add(bookList.get(index));
 	}
 	
-	public boolean bookPurchase() {  // 도서 구매
+	public boolean bookPurchase(String id, int index) {  // 도서 구매
 		
-		
+		if(uc.userMap.get(id).getCash() >= bookList.get(index).getSalePrice()) {
+			return true;
+		}
 		return false;
 	}
 	

@@ -38,8 +38,8 @@ public class UserController {
 		return null;
 	}
 	
-	public void cashCharge() { // 캐시 충전하기
-		
+	public void cashCharge(String id, int cash) { // 캐시 충전하기
+		userMap.get(id).setCash(cash);
 	}
 	
 	public User updateUserInfo(String id, User user) { // 회원 정보 수정
