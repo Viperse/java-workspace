@@ -13,10 +13,8 @@ public class ReviewController {
 	// 아이디가 있는 사람만 리뷰 작성
 	public boolean reviewWrite(String id, int index, Review review) {
 		if(uc.userMap.containsKey(id)) {
-			// 리뷰 리스트가 null이면 리스트 생성 후 연결
 			if(bc.bookList.get(index).getReview() == null) {
-				List<Review> reviewList = new ArrayList<>();
-				bc.bookList.get(index).setReview(reviewList);
+				bc.bookList.get(index).setReview(new ArrayList<>());
 			}
 			bc.bookList.get(index).getReview().add(review);
 			return true;

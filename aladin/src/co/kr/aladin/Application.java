@@ -69,18 +69,20 @@ public class Application {
 		User user = new User(email, password, name, birth, number, cash, null);
 		
 		uc.signUp(id, user);
+		System.out.println(uc.login(id, password));
 		
-		System.out.println(uc.viewUserInfo(id));
+		uc.viewUserInfo(id);
 		
-//		bc.bookCartInput(id, 0);
+//		bc.bookCartInput(id, password, 0);
 		
-		uc.cashCharge(id, 800000);
+		System.out.println("캐시 : " + uc.cashCharge(id, 800000));
 		
-		System.out.println(uc.viewUserInfo(id));
+		uc.viewUserInfo(id);
 		
-		if(bc.bookPurchase(id, 0)) {
+		if(bc.bookPurchase(id, password, 0)) {
 			System.out.println("성공적으로 구매했습니다.");
 		}
+		
 		
 
 	}

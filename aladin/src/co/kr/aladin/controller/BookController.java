@@ -14,6 +14,7 @@ public class BookController {
 	
 	 List<Book> bookList = new ArrayList<>();
 	 UserController uc = new UserController();
+	 User user = null;
 	
 	public void bookEnroll(Book book)  { // 도서 상품 등록
 		bookList.add(book);
@@ -68,19 +69,20 @@ public class BookController {
 		return bookList;
 	}
 	
-	public void bookCartInput(String id, int index) { // 장바구니 넣기
+	public void bookCartInput(String id, String password, int index) { // 장바구니 넣기
 		
-		if(uc.userMap.get(id).getBookcart() == null) {
-			List<Book> bookcart = new ArrayList<>();
-			uc.userMap.get(id).setBookcart(bookcart);
+		user = uc.loginAdmin(id, password);
+		if(user.getBookcart() == null) {
+			user.setBookcart(new ArrayList<>());
 		}
-		
-		uc.userMap.get(id).getBookcart().add(bookList.get(index));
+		uc.getHashMap().get(id).getBookcart().add(bookList.get(index));
 	}
 	
-	public boolean bookPurchase(String id, int index) {  // 도서 구매
+	public boolean bookPurchase(String id, String password, int index) {  // 도서 구매
 		
-		if(uc.userMap.get(id).getCash() >= bookList.get(index).getSalePrice()) {
+		user = uc.loginAdmin(id, password);
+		
+		if(user.getCash() >= bookList.get(index).getSalePrice()) {
 			return true;
 		}
 		return false;
@@ -93,5 +95,15 @@ public class BookController {
 	public void bookDelete(int index) { // 도서 정보 삭제 (판매 종료)
 		bookList.remove(index);
 	}
+	
+	public boolean test(String id, String password) {
+		
+		user = uc.loginAdmin(id, password);
+		
+		if(user.getPassword().equals(password)) {
+			return true;
+		} return false;
+	}
+	
 
 }

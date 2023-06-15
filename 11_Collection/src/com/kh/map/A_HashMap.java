@@ -68,7 +68,7 @@ public class A_HashMap {
 		
 		Set<Entry<String, Integer>> entrySet = map.entrySet();
 		for(Entry<String, Integer> entry :  entrySet) {
-			System.out.println(entry.getKey() + " : " + entry.getValue());
+			System.out.println(entry.getKey() + ": " + entry.getValue());
 		}
 		
 		/*
