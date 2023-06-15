@@ -19,6 +19,27 @@ public class Application {
 		BookController bc = new BookController();
 		ReviewController rc = new ReviewController();
 		
+		
+		bc.bookEnroll(new Book("천개의 파랑", "1874592", "공포", "천선란", "우리 SF를 물들일 가장 따뜻한 색", 36000 ,24000, null, null, null, 0));
+		bc.bookEnroll(new Book("죽음의 역사", "4741258", "의학", "앤드루 도이그", "뭐 하는 책일까", 21000 ,19800, null, null, null, 0));
+		bc.bookEnroll(new Book("자율신경계", "7495226", "의학", "고바야시 히로유키", "뭐 하는 책일까", 9200 ,8820, null, null, null, 0));
+		bc.bookEnroll(new Book("죽음이 향연", "7885112", "공포", "한만형", "뭐 하는 책일까", 20000 ,18000, null, null, null, 0));
+		
+		
+		for(int i=0; i<bc.bookMenu().size(); i++) {
+			System.out.println(bc.bookMenu().get(i));
+		}
+		System.out.println();
+		
+		System.out.println(bc.bookView(0));
+		System.out.println(bc.bookSearch("역사"));
+		
+		System.out.println();
+		
+		System.out.println(bc.bookGenreView("의학"));
+	
+		
+		
 		System.out.print("아이디 : ");
 		String id = sc.nextLine();
 		
@@ -51,6 +72,15 @@ public class Application {
 		
 		System.out.println(uc.viewUserInfo(id));
 		
+//		bc.bookCartInput(id, 0);
+		
+		uc.cashCharge(id, 800000);
+		
+		System.out.println(uc.viewUserInfo(id));
+		
+		if(bc.bookPurchase(id, 0)) {
+			System.out.println("성공적으로 구매했습니다.");
+		}
 		
 
 	}

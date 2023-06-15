@@ -38,23 +38,42 @@ public class BookController {
 		return null;
 	}
 	
-	public Book bookGenreView(String genre) { // 도서 장르별 검색
+	public List<Book> bookGenreView(String genre) { // 도서 장르별 검색
+		
+		// 그냥 리턴 때리면 반복문 안 돌아가고 하나만 나가니까 리스트 재생성...
+		List<Book> genreList = new ArrayList<>();
+		
 		for(int i=0; i<bookList.size(); i++) {
 			if(bookList.get(i).getGenre().equals(genre)) {
-				return bookList.get(i);
+				genreList.add(bookList.get(i));
 			}
-		}
-		return null;
+		} return genreList;
 	}
 	
-	// 추천 순서로 보기
-	public List<Book> bookRecommend() {
+	public void recomCount() { // 추천하기
+		
+		for(int i=0; i<bookList.size(); i++) {
+			for(int j=0; j<bookList.get(i).getReview().size(); j++) {
+				if(bookList.get(i).getReview().get(j).isRecommend()) {
+					bookList.get(i).setRecomCount(bookList.get(i).getRecomCount() + 1);
+				}
+			}
+		}
+	}
+	
+	
+	public List<Book> bookRecommend() { // 추천 순서로 보기
 		
 		Collections.sort(bookList, new RecommendOrder());
 		return bookList;
 	}
 	
-	public void bookCartInput(String id, int index) { // 장바구니 넣기	
+	public void bookCartInput(String id, int index) { // 장바구니 넣기
+		
+		if(uc.userMap.get(id).getBookcart() == null) {
+			List<Book> bookcart = new ArrayList<>();
+			uc.userMap.get(id).setBookcart(bookcart);
+		}
 		
 		uc.userMap.get(id).getBookcart().add(bookList.get(index));
 	}
