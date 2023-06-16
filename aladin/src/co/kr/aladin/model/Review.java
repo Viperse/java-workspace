@@ -10,7 +10,7 @@ public class Review {
 	private String title;
 	private boolean recommend;
 	private String comment;
-	LocalDateTime now = LocalDateTime.now();
+	LocalDateTime now;
 	
 	
 	public Review() {}

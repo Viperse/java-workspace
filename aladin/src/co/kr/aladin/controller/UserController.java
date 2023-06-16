@@ -12,8 +12,7 @@ import co.kr.aladin.model.User;
 
 public class UserController {
 	
-	User user = null;
-	HashMap<String, User> userMap = new HashMap<>();
+	public HashMap<String, User> userMap = new HashMap<>();
 	
 	public boolean signUp(String id, User user) { // 회원가입
 		if(!userMap.containsKey(id)) {
@@ -31,25 +30,13 @@ public class UserController {
 		} 
 		return false;
 	}
+	 
 	
-	public User loginAdmin(String id, String password) {  // 로그인 정보로 다른 기능 관리
+	public User viewUserInfo(String id) { // 회원 정보 보기
 		if(userMap.containsKey(id)) {
-			if(userMap.get(id).getPassword().equals(password)) {
-				user = userMap.get(id);
-				return user;
-			}
-		}
-		return null;
-	} 
-	
-	
-	public void viewUserInfo(String id) { // 회원 정보 보기
-		if(userMap.containsKey(id)) {
-			Set<Entry<String, User>> entrySet = userMap.entrySet();
-			for(Entry<String, User> entry :  entrySet) {
-				System.out.println("아이디 [" + entry.getKey() + "] " + " : " + entry.getValue());
-			}
-		}
+			return userMap.get(id);
+			
+		} return null;		
 
 	}
 	
@@ -79,8 +66,5 @@ public class UserController {
 		return null;
 	}
 	
-	public Map<String, User> getHashMap() {
-		return this.userMap;
-	}
 
 }

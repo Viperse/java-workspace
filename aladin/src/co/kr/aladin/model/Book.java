@@ -20,7 +20,7 @@ public class Book {
 	public Book() {}
 
 	public Book(String title, String bookcode, String genre, String author, String comment, int oriPrice, int salePrice,
-			String bookimgUrl, String preimgUrl, List<Review> review, int recomCount) {
+			String bookimgUrl, String preimgUrl) {
 		super();
 		this.title = title;
 		this.bookcode = bookcode;
@@ -31,8 +31,8 @@ public class Book {
 		this.salePrice = salePrice;
 		this.bookimgUrl = bookimgUrl;
 		this.preimgUrl = preimgUrl;
-		this.review = review;
-		this.recomCount = recomCount;
+		this.review = null;
+		this.recomCount = 0;
 	}
 
 	public String getTitle() {

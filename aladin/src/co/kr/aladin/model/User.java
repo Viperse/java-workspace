@@ -19,8 +19,7 @@ public class User {
 	public User() {}
 
 
-	public User(String email, String password, String name, LocalDate birth, String number, int cash,
-			List<Book> bookcart) {
+	public User(String email, String password, String name, LocalDate birth, String number, int cash) {
 		super();
 		this.email = email;
 		this.password = password;
@@ -28,7 +27,7 @@ public class User {
 		this.birth = birth;
 		this.number = number;
 		this.cash = cash;
-		this.bookcart = bookcart;
+		this.bookcart = null;
 	}
 
 
