@@ -48,7 +48,7 @@ public class URLTest {
 		
 		try {
 			URL url = new URL("https://iei.or.kr");
-			input = new BufferedReader(new InputStreamReader(url.openStream()));
+			input = new BufferedReader(new InputStreamReader(url.openStream()));  // openStream 페이지 정보 가져오는 스트림
 			
 			String line = "";
 			while((line = input.readLine()) != null) {
